@@ -41,3 +41,13 @@ const weatherKey = '1fd4e4aec3019e64ba3f665006f97548';
 export const getWeatherLink = (city: string, lang: languages) => {
   return `https://api.openweathermap.org/data/2.5/weather?q=${city}&lang=${lang}&appid=${weatherKey}&units=metric`;
 };
+
+export const getQuoteLink = (lang: string) => {
+  // TODO: add UA quotes
+  switch (lang) {
+    case 'ua':
+      return 'https://type.fit/api/quotes';
+    default:
+      return 'https://type.fit/api/quotes';
+  }
+};
