@@ -2,12 +2,163 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + TS</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <title>Momentum</title>
   </head>
   <body>
-    <div id="app"></div>
+    <header class="header">
+      <div class="player">
+        <div class="player-controls">
+          <div class="player__buttons">
+            <button class="play-prev player-icon"></button>
+            <button class="play player-icon"></button>
+            <button class="play-next player-icon"></button>
+          </div>
+          <div class="progress">
+            <span class="track-time">00:00 / 00:00</span>
+            <input type="range" min="0" max="100" step="1" value="0" />
+            <span class="track-name"></span>
+          </div>
+          <div class="volume">
+            <button class="fas fa-volume-up"></button>
+            <input type="range" min="0" max="1" step="0.01" value="0.8" />
+          </div>
+        </div>
+        <ul class="play-list"></ul>
+      </div>
+      <div class="weather">
+        <input type="text" class="city" />
+        <i class="weather-icon owf"></i>
+        <div class="weather-error"></div>
+        <div class="description-container">
+          <span class="temperature"></span>
+          <span class="weather-description"></span>
+        </div>
+        <div class="wind"></div>
+        <div class="humidity"></div>
+      </div>
+    </header>
+    <main class="main">
+      <div class="slider-icons">
+        <button class="slide-prev slider-icon"></button>
+        <button class="slide-next slider-icon"></button>
+      </div>
+      <time class="time"></time>
+      <date class="date"></date>
+      <div class="greeting-container">
+        <span class="greeting"></span>
+        <input type="text" class="name" />
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="quote-container">
+        <button class="change-quote"></button>
+        <div>
+          <div class="quote"></div>
+          <div class="author"></div>
+        </div>
+      </div>
+      <div class="todo-list">
+        <div class="todo-list__block">
+          <p></p>
+          <div class="todo-list__input">
+            <input type="text" />
+            <button>+</button>
+          </div>
+          <ul class="todo-list__list"></ul>
+        </div>
+        <div class="todo-list__icon">
+          <i class="fas fa-list-alt"></i> <span></span>
+        </div>
+      </div>
+      <div class="settings">
+        <div class="settings__block">
+          <div class="language">
+            <p>Choose Language</p>
+            <select>
+              <option value="en">EN</option>
+              <option value="ua">UA</option>
+            </select>
+          </div>
+          <div class="picture">
+            <div class="picture__options">
+              <p>Choose Picture Source</p>
+              <select>
+                <option value="github">Github</option>
+                <option value="unsplash">Unsplash</option>
+                <option value="flickr">Flickr</option>
+              </select>
+            </div>
+            <div class="picture__tags">
+              <div class="picture__tags-header">
+                <img src="./svg/tag.svg" alt="tag-icon" />
+                <p>Tags</p>
+              </div>
+              <p>
+                Press enter to add tag <br />
+                (Unsplash or Flickr only)
+              </p>
+              <ul>
+                <input type="text" name="" id="" />
+              </ul>
+            </div>
+          </div>
+          <p class="settings-header">Show</p>
+          <div class="hide-blocks">
+            <div class="player-block">
+              <input
+                type="checkbox"
+                id="player"
+                data-block-name="player"
+                checked /><label for="player">Player</label>
+            </div>
+            <div class="weather-block">
+              <input
+                type="checkbox"
+                id="weather"
+                data-block-name="weather"
+                checked /><label for="weather">Weather</label>
+            </div>
+            <div class="quote-block">
+              <input
+                type="checkbox"
+                id="quote"
+                data-block-name="quote-container"
+                checked />
+              <label for="quote">Quote</label>
+            </div>
+            <div class="date-block">
+              <input type="checkbox" id="date" data-block-name="date" checked />
+              <label for="date">Date</label>
+            </div>
+            <div class="time-block">
+              <input type="checkbox" id="time" data-block-name="time" checked />
+              <label for="time">Time</label>
+            </div>
+            <div class="greeting-block">
+              <input
+                type="checkbox"
+                id="greeting"
+                data-block-name="greeting-container"
+                checked />
+              <label for="greeting">Greeting</label>
+            </div>
+            <div class="todo-list-block">
+              <input
+                type="checkbox"
+                id="todo-list"
+                data-block-name="todo-list"
+                checked />
+              <label for="todo-list">Todo</label>
+            </div>
+          </div>
+        </div>
+        <i class="fas fa-cog"></i>
+      </div>
+    </footer>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
