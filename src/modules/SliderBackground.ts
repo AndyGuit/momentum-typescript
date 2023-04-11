@@ -14,10 +14,6 @@ const getImgLink = async () => {
   const timeOfDay = translations.greeting.en[getTimeIndex()].split(' ')[1];
   const tags = OPTIONS.picTags.join(',') || timeOfDay;
 
-  if (OPTIONS.picSource === picSource.github) {
-    return getGithubImg(imgNumber, timeOfDay);
-  }
-
   if (OPTIONS.picSource === picSource.unsplash) {
     return getUnsplashImg(tags);
   }
@@ -25,6 +21,8 @@ const getImgLink = async () => {
   if (OPTIONS.picSource === picSource.flickr) {
     return getFlickrImg(randomImg.toString(), tags);
   }
+
+  return getGithubImg(imgNumber, timeOfDay);
 };
 
 export const setBackground = async () => {
