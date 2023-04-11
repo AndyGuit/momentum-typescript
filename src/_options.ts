@@ -1,4 +1,4 @@
-enum picSource {
+export enum picSource {
   github = 'github',
   flickr = 'flickr',
   unsplash = 'unsplash',
