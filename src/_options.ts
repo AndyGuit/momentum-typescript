@@ -22,11 +22,11 @@ export const OPTIONS: Options = {
   lang: 'en',
   picSource: picSource.github,
   hiddenBlocks: [],
-  todoList: ['todo 1', 'todo 2'],
+  todoList: [],
   picTags: [],
 };
 
-(function loadOptions() {
+export const loadOptions = () => {
   Object.keys(OPTIONS).forEach(key => {
     const item = localStorage.getItem(key);
     const isArray = Array.isArray(OPTIONS[key as keyof Options]);
@@ -36,7 +36,7 @@ export const OPTIONS: Options = {
 
     if (isArray && item) OPTIONS[key as keyof Options] = item.split(',');
   });
-})();
+};
 
 export const saveOptions = () => {
   Object.keys(OPTIONS).forEach(key => {
