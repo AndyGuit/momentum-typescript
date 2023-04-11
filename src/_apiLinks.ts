@@ -1,3 +1,5 @@
+import { languages } from './_options';
+
 export const getGithubImg = (imgNum: string, tag: string) => {
   return `https://raw.githubusercontent.com/rolling-scopes-school/stage1-tasks/assets/images/${tag}/${imgNum}.jpg`;
 };
@@ -32,4 +34,10 @@ export const getFlickrImg = async (imgNum: string, tag: string) => {
   const res = await fetch(url);
   const data: FlickrRes = await res.json();
   return data.photos.photo[+imgNum].url_l;
+};
+
+const weatherKey = '1fd4e4aec3019e64ba3f665006f97548';
+
+export const getWeatherLink = (city: string, lang: languages) => {
+  return `https://api.openweathermap.org/data/2.5/weather?q=${city}&lang=${lang}&appid=${weatherKey}&units=metric`;
 };

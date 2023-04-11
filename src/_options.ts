@@ -4,7 +4,7 @@ export enum picSource {
   unsplash = 'unsplash',
 }
 
-type languages = 'en' | 'ua';
+export type languages = 'en' | 'ua';
 
 interface Options {
   name: string;
@@ -24,4 +24,8 @@ export const OPTIONS: Options = {
   hiddenBlocks: [],
   todoList: [],
   picTags: [],
+};
+
+export const saveOptions = () => {
+  // TODO
 };
