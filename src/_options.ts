@@ -22,10 +22,18 @@ export const OPTIONS: Options = {
   lang: 'en',
   picSource: picSource.github,
   hiddenBlocks: [],
-  todoList: [],
+  todoList: ['todo 1', 'todo 2'],
   picTags: [],
 };
 
 export const saveOptions = () => {
-  // TODO
+  Object.keys(OPTIONS).forEach(key => {
+    let opt = OPTIONS[key as keyof Options];
+
+    if (Array.isArray(opt)) {
+      opt = opt.join(',');
+    }
+
+    localStorage.setItem(key, opt);
+  });
 };
