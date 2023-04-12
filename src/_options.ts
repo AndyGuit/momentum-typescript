@@ -32,8 +32,9 @@ export const loadOptions = () => {
     const isArray = Array.isArray(OPTIONS[key as keyof Options]);
 
     // TODO: Fix typescript error
+    // @ts-ignore
     if (item && !isArray) OPTIONS[key as keyof Options] = item;
-
+    // @ts-ignore
     if (isArray && item) OPTIONS[key as keyof Options] = item.split(',');
   });
 };

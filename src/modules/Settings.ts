@@ -69,6 +69,7 @@ const translateSettings = () => {
     const blockName = block.getAttribute('for');
     const blockEl = document.querySelector(`label[for="${blockName}"]`)!;
     // TODO: Fix typescript error
+    // @ts-ignore
     const blockTranslation = t.blockNames[blockName];
     blockEl.textContent = blockTranslation[OPTIONS.lang];
   });
