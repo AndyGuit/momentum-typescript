@@ -9,6 +9,7 @@ import { Weather } from './modules/Weather';
 import { Quote } from './modules/Quote';
 import { AudioPlayer } from './modules/AudioPlayer';
 import { ToDo } from './modules/ToDo';
+import { Settings } from './modules/Settings';
 
 loadOptions();
 
@@ -19,3 +20,4 @@ Weather();
 Quote();
 AudioPlayer();
 ToDo();
+Settings();
